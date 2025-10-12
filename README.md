@@ -12,7 +12,7 @@ Latest updated build for **Spark 3.5.0 & Scala 2.12** Please make sure your clus
 ```scala
 import com.databricks.industry.solutions.json2spark._
 
-val x = new Json2Spark(Json2Spark.file2String("src/test/scala/resources/address.schema.json"))
+val x = new Json2Spark(Json2Spark.file2String("src/test/resources/address.schema.json"))
 x.convert2Spark
 /*
 org.apache.spark.sql.types.StructType = StructType
@@ -41,7 +41,7 @@ val spark = ( SparkSession.builder()
       .getOrCreate() )
       
 val rdd = spark.sparkContext.parallelize(Seq( Seq("apple"), Seq("orange", "blueberry"), Seq("starfruit"), Seq("mango", "strawberry", "apple"))).map(row => Row(row))
-val schema = new Json2Spark(Json2Spark.file2String("src/test/scala/resources/veggies.json")).convert2Spark
+val schema = new Json2Spark(Json2Spark.file2String("src/test/resources/veggies.json")).convert2Spark
 val df = spark.createDataFrame(rdd, schema)
 
 df.printSchema
@@ -59,7 +59,7 @@ root
 Optionally allow flexibility in schema definition by not requiring fields to be populated
 
 ```scala
-val x = new Json2Spark(Json2Spark.file2String("src/test/scala/resources/address.schema.json"), enforceRequiredField=false)
+val x = new Json2Spark(Json2Spark.file2String("src/test/resources/address.schema.json"), enforceRequiredField=false)
 x.convert2Spark
 /*
 org.apache.spark.sql.types.StructType = StructType
@@ -79,7 +79,7 @@ StructType(
 Json schemas can represent objects in a definitions path. Using the ***defs*** method converts a json definition to a Spark Schema
 
 ```scala
-val x = new Json2Spark(Json2Spark.file2String("src/test/scala/resources/in-network-rates.json"), 
+val x = new Json2Spark(Json2Spark.file2String("src/test/resources/in-network-rates.json"), 
 	defsLocation="definitions")
 
 StructType(x.defs("in_network")).prettyJson
@@ -119,7 +119,7 @@ Automatically resolving and translating references like below into a unified spa
 ```
 
 ```scala
-val x = new Json2Spark(Json2Spark.file2String("src/test/scala/resources/veggies.schema.json"))
+val x = new Json2Spark(Json2Spark.file2String("src/test/resources/veggies.schema.json"))
 x.convert2Spark.prettyJson
 /*
 String =
@@ -161,7 +161,7 @@ String =
 Some schemas have self references and extensions that result in an unlimited schema definition (stack overflow errors). These can be filtered out by specifying their path like below
 
 ```scala
-val x = new Json2Spark(Json2Spark.file2String("src/test/scala/resources/fhir.schema.json"), 
+val x = new Json2Spark(Json2Spark.file2String("src/test/resources/fhir.schema.json"), 
 	circularReferences=Some(Seq("#/definitions/Extension", "#/definitions/Element", "#/definitions/Identifier", "#/definitions/Period","#/definitions/Reference")))
 	
 new StructType(x.defs("Patient").toArray).prettyJson
