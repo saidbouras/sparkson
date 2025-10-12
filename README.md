@@ -1,14 +1,70 @@
-# json2spark-schema
-Given a json schema file, translate to an equivalent spark schema. 
+# 🌟 Sparkson
 
-## Implementation
-The goal of this repo is not to represent every permutation of a json schema -> spark schema mapping, but provide a foundational layer to achieve similar representation. E.g. keywords like oneOf, allOf, enums, constants, etc are not supported for Spark definitions and therefore are not in scope. 
+> **Forked from** [Databricks Industry Solutions json2spark-schema](https://github.com/databricks-industry-solutions/json2spark-schema)  
+> Maintained and extended by **Saïd Bouras**.
 
+---
 
-## Running
+## 🚀 What is Sparkson?
 
-Latest updated build for **Spark 3.5.0 & Scala 2.12** Please make sure your cluster matches these versions. 
+**Sparkson** is a lightweight Scala library for Apache Spark that allows you to:
 
+- Convert **JSON Schema** into **Spark StructType** easily 🛠️
+- Perform **granular JSON validation** using UDFs ✅
+- Extend with additional JSON utilities for Spark in the future 🌐
+
+Think of it as a **bridge between JSON and Spark**: from schema inference to validation, all in a clean, reusable package.
+
+---
+
+## 📦 Features
+
+- **JSON Schema → Spark StructType**: Automatically infer StructType from JSON Schema files.
+- **JSON Validation (planned)**: Validate JSON records using Everit schema library via UDFs.
+- **Maven Central Ready**: Classic JAR with proper dependencies, ready to be used as a library in your Spark projects.
+- **Extensible**: Future modules for JSON utilities, validators, and more.
+
+---
+
+## 🧩 Example Usage
+
+```scala
+import io.github.saidbouras.spark.json.schema.JsonToStructType
+import org.apache.spark.sql.SparkSession
+
+val spark = SparkSession.builder()
+  .appName("Sparkson Example")
+  .getOrCreate()
+
+// Load JSON Schema from file
+val schema = JsonToStructType.fromFile("/path/to/schema.json")
+
+// Apply to DataFrame
+val df = spark.read.schema(schema).json("/path/to/json")
+df.show()
+```
+
+## 🌱 Roadmap
+
+- ✅ **v1.0**: JSON Schema → StructType (core functionality)
+- ⚡  **v1.1**: JSON Validation UDFs (Everit)
+- 🛠 **v1.2**: CLI tool for schema preview and quick validation
+- 🔮 **Future**: Additional JSON utilities, modular Spark extensions
+
+---
+
+## 📌 Getting Started
+
+### json2spark-schema
+
+The first core functionality of Sparkson, initially forked from [Databricks Industry Solutions json2spark-schema](https://github.com/databricks-industry-solutions/json2spark-schema), allows you to **convert JSON Schema files into equivalent Spark StructType schemas**.
+
+Key highlights:
+- Supports **multiple JSON Schema specifications** in one project
+- Handles  **nested and complex JSON structures**
+- Generates **Spark-compatible StructType schemas** ready for DataFrame ingestion
+
+#### Examples : 
 ```scala
 import com.databricks.industry.solutions.json2spark._
 
@@ -29,7 +85,7 @@ StructType(
 
 ```
 
-## Running with Spark
+#### Running with Spark
 ```scala
 import org.apache.spark.sql.types._
 import org.apache.spark.sql.{SparkSession, Row}
@@ -53,9 +109,8 @@ root
 
 ```
 
-## More Complex Representations 
+#### More Complex Representations 
 
-### Do not enforce required fields
 Optionally allow flexibility in schema definition by not requiring fields to be populated
 
 ```scala
@@ -75,7 +130,7 @@ StructType(
 */
 ```
 
-### Definition as a spark schema
+#### Definition as a spark schema
 Json schemas can represent objects in a definitions path. Using the ***defs*** method converts a json definition to a Spark Schema
 
 ```scala
@@ -108,7 +163,7 @@ String =
 */
 ```
 
-### Reference resolution 
+#### Reference resolution 
 Automatically resolving and translating references like below into a unified spark schema
 
 ```json
@@ -157,7 +212,7 @@ String =
 */	  
 ```
 
-### Circular Depdencies 
+#### Circular Depdencies 
 Some schemas have self references and extensions that result in an unlimited schema definition (stack overflow errors). These can be filtered out by specifying their path like below
 
 ```scala
@@ -191,7 +246,7 @@ String =
 */
 ```
 
-### Saving schema to a file for future use 
+#### Saving schema to a file for future use 
 ```scala
 import java.io._
 
@@ -200,7 +255,9 @@ val file = new FileWriter(new File(fileName))
 file.write(x.convert2Spark.prettyJson)
 file.close()
 ```
+---
 
-## Databricks Notebooks Examples
+## ⚖️ License
 
-Further examples found in *01_healthcare_FHIR_demo.py* and include samples of using Healthcare FHIR (Fast Healthcare Interoperability Resources).
+This project is licensed under the **Apache License 2.0**.  
+Original work forked from [Databricks Industry Solutions json2spark-schema](https://github.com/databricks-industry-solutions/json2spark-schema).  
