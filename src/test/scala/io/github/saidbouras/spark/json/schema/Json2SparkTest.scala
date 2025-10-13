@@ -9,15 +9,15 @@ import org.scalatest.funsuite.AnyFunSuite
 class Json2SparkTest extends AnyFunSuite {
 
   test("test basic properties and simple datatypes") {
-    val result = new Json2Spark(Json2Spark.readFile("src/test/resources/address.schema.json")).convert2Spark
+    val result = new Json2Spark(Json2Spark.readFile("src/test/resources/models/address.schema.json")).convert2Spark
     assert(result.getClass == new StructType().getClass)
     assert(result.size == 7)
     assert(result("post-office-box").dataType == StringType)
-    assert(result("post-office-box").nullable == false)
+    assert(result("post-office-box").nullable)
   }
 
   test("test arrays, objects") {
-    val result = new Json2Spark(Json2Spark.readFile("src/test/resources/veggies.json")).convert2Spark
+    val result = new Json2Spark(Json2Spark.readFile("src/test/resources/models/veggies.json")).convert2Spark
     assert(result.size == 1)
     assertCompiles(""" result("fruits").dataType.asInstanceOf[ArrayType] """)
   }
@@ -29,7 +29,7 @@ class Json2SparkTest extends AnyFunSuite {
       .getOrCreate())
 
     val rdd = spark.sparkContext.parallelize(Seq(Seq("apple"), Seq("orange", "blueberry"), Seq("starfruit"), Seq("mango", "strawberry", "apple"))).map(row => Row(row))
-    val schema = new Json2Spark(Json2Spark.readFile("src/test/resources/veggies.json")).convert2Spark
+    val schema = new Json2Spark(Json2Spark.readFile("src/test/resources/models/veggies.json")).convert2Spark
     val df = spark.createDataFrame(rdd, schema)
     assert(df.count() == 4)
     assert(df.select(col("fruits")).first.getSeq[String](0)(0) == "apple")
@@ -37,7 +37,7 @@ class Json2SparkTest extends AnyFunSuite {
 
 
   test("test FHIR resources") {
-    val x = new Json2Spark(Json2Spark.readFile("src/test/resources/fhir.schema.json"),
+    val x = new Json2Spark(Json2Spark.readFile("src/test/resources/models/fhir.schema.json"),
       defsLocation = "definitions",
       enforceRequiredField = false,
       circularReferences = Some(Seq("#/definitions/Extension", "#/definitions/Element", "#/definitions/Identifier", "#/definitions/Period", "#/definitions/Reference")))
@@ -62,12 +62,19 @@ class Json2SparkTest extends AnyFunSuite {
     assert(a.toSet == b.toSet)
   }
 
+  test("test MODEL json schema DRAFT04") {
+    val sparkSchema = new Json2Spark(Json2Spark.readFile("src/test/resources/models/model.schema.json")).convert2Spark
+//    print(sparkSchema.treeString)
+    assert(sparkSchema.getClass == new StructType().getClass)
+    assert(sparkSchema.size == 25)
+  }
+
   test("Test creating all FHIR dependencies") {
 
     /*
      * Find circular dependencies 
      */
-    val x = new Json2Spark(Json2Spark.readFile("src/test/resources/fhir.schema.json"),
+    val x = new Json2Spark(Json2Spark.readFile("src/test/resources/models/fhir.schema.json"),
       defsLocation = "definitions",
       enforceRequiredField = false)
 
@@ -85,7 +92,7 @@ class Json2SparkTest extends AnyFunSuite {
     }
 
     //
-    val fhir = new Json2Spark(Json2Spark.readFile("src/test/resources/fhir.schema.json"),
+    val fhir = new Json2Spark(Json2Spark.readFile("src/test/resources/models/fhir.schema.json"),
       defsLocation = "definitions",
       enforceRequiredField = false,
       circularReferences = Some(circularRefs))
@@ -102,12 +109,13 @@ class Json2SparkTest extends AnyFunSuite {
     assert(allResources.map(x => x.get("Appointment")).filter(x => x.nonEmpty)(0).getOrElse(Nil) != Nil)
 
   }
+
 }
 
 class WaterbearTest extends AnyFunSuite {
   test("test_invalid_dir") {
     assertThrows[java.io.FileNotFoundException] {
-      Json2Spark.readFile("src/test/scala/waterbear/data/foobar.json")
+      Json2Spark.readFile("src/test/resources/waterbear/data/foobar.json")
     }
   }
   /*
@@ -115,7 +123,7 @@ class WaterbearTest extends AnyFunSuite {
    */
   test("test_invalid_parser_no_schema") {
     assertThrows[java.lang.UnsupportedOperationException] {
-      new Json2Spark(Json2Spark.readFile("src/test/scala/waterbear/schema/dummy.json")).convert2Spark
+      new Json2Spark(Json2Spark.readFile("src/test/resources/waterbear/schema/dummy.json")).convert2Spark
     }
   }
 
@@ -134,13 +142,13 @@ class WaterbearTest extends AnyFunSuite {
   }
 
   test("test_schema") {
-    val schema = new Json2Spark(Json2Spark.readFile("src/test/scala/waterbear/schema/employee.json")
-      , externalRefBaseURI = "src/test/scala/waterbear/schema/").convert2Spark
+    val schema = new Json2Spark(Json2Spark.readFile("src/test/resources/waterbear/schema/employee.json")
+      , externalRefBaseURI = "src/test/resources/waterbear/schema/").convert2Spark
     val spark = (SparkSession.builder()
       .master("local[2]")
       .config("spark.driver.bindAddress", "127.0.0.1")
       .getOrCreate())
-    val df = spark.read.format("json").schema(schema).load("src/test/scala/waterbear/data/")
+    val df = spark.read.format("json").schema(schema).load("src/test/resources/waterbear/data/")
     assert(df.count == 100)
     assert(df.filter(df("id") === 2).select("person.first_name").first.mkString == "Garrik")
     assert(df.filter(df("id") === 2).select("person.last_name").first.mkString == "Berggren")

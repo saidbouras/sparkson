@@ -1,0 +1,140 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://example.com/complex-system",
+  "definitions": {
+    "node": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/definitions/dataContainer"
+        },
+        "connections": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/connection"
+          }
+        }
+      },
+      "required": ["id"]
+    },
+    "connection": {
+      "type": "object",
+      "properties": {
+        "target": {
+          "$ref": "#/definitions/node"
+        },
+        "metadata": {
+          "$ref": "#/definitions/metadata"
+        },
+        "weight": {
+          "type": "number"
+        }
+      },
+      "required": ["target"]
+    },
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "tags": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/tag"
+          }
+        },
+        "parent": {
+          "$ref": "#/definitions/metadata"
+        },
+        "relatedNodes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/node"
+          }
+        }
+      }
+    },
+    "tag": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "category": {
+          "$ref": "#/definitions/category"
+        }
+      },
+      "required": ["name"]
+    },
+    "category": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "parent": {
+          "$ref": "#/definitions/category"
+        },
+        "associatedNodes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/node"
+          }
+        }
+      },
+      "required": ["name"]
+    },
+    "dataContainer": {
+      "type": "object",
+      "properties": {
+        "value": {},
+        "schema": {
+          "$ref": "#/definitions/schemaDefinition"
+        },
+        "nested": {
+          "$ref": "#/definitions/dataContainer"
+        }
+      }
+    },
+    "schemaDefinition": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string"
+        },
+        "properties": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/schemaDefinition"
+          }
+        },
+        "items": {
+          "$ref": "#/definitions/schemaDefinition"
+        },
+        "references": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/node"
+          }
+        }
+      }
+    }
+  },
+  "type": "object",
+  "properties": {
+    "system": {
+      "type": "string"
+    },
+    "nodes": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/node"
+      }
+    },
+    "globalMetadata": {
+      "$ref": "#/definitions/metadata"
+    }
+  },
+  "required": ["system"]
+}

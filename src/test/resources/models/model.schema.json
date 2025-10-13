@@ -1,0 +1,2039 @@
+{
+  "$id": "magellanstr/MODEL",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "magellanstr/MODEL",
+  "type": "object",
+  "properties": {
+    "_action": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Action",
+      "name": "_action",
+      "metadata": {
+        "comment": "Action"
+      }
+    },
+    "_event": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Evènement",
+      "name": "_event",
+      "metadata": {
+        "comment": "Evènement"
+      }
+    },
+    "_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "ID",
+      "name": "_id",
+      "metadata": {
+        "comment": "ID"
+      }
+    },
+    "_translangcode": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Langue",
+      "name": "_translangcode",
+      "metadata": {
+        "comment": "Langue"
+      }
+    },
+    "href": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Référence interne",
+      "name": "href",
+      "metadata": {
+        "comment": "Référence interne"
+      }
+    },
+    "class": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Classe",
+      "name": "class",
+      "metadata": {
+        "comment": "Classe"
+      }
+    },
+    "code": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Famille",
+      "name": "code",
+      "metadata": {
+        "comment": "Famille"
+      }
+    },
+    "description": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Description du modèle de configuration",
+      "name": "description",
+      "metadata": {
+        "comment": "Description du modèle de configuration"
+      }
+    },
+    "extrapolatelife": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Calage compteur obligatoire",
+      "name": "extrapolatelife",
+      "metadata": {
+        "comment": "Calage compteur obligatoire"
+      }
+    },
+    "installable": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Installable ?",
+      "name": "installable",
+      "metadata": {
+        "comment": "Installable ?"
+      }
+    },
+    "itemsetid": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Ensemble d’articles",
+      "name": "itemsetid",
+      "metadata": {
+        "comment": "Ensemble d’articles"
+      }
+    },
+    "labelsystem": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Système d’étiquettes",
+      "name": "labelsystem",
+      "metadata": {
+        "comment": "Système d’étiquettes"
+      }
+    },
+    "lcnstructure": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Structure LCN",
+      "name": "lcnstructure",
+      "metadata": {
+        "comment": "Structure LCN"
+      }
+    },
+    "model": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Modèle",
+      "name": "model",
+      "metadata": {
+        "comment": "Modèle"
+      }
+    },
+    "secrestr": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Restriction de sécurité",
+      "name": "secrestr",
+      "metadata": {
+        "comment": "Restriction de sécurité"
+      }
+    },
+    "selectedvariation": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Configuration sélectionnée",
+      "name": "selectedvariation",
+      "metadata": {
+        "comment": "Configuration sélectionnée"
+      }
+    },
+    "toplcn": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "LCN du somment",
+      "name": "toplcn",
+      "metadata": {
+        "comment": "LCN du somment"
+      }
+    },
+    "validatetr": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Validation des enregistrements techniques",
+      "name": "validatetr",
+      "metadata": {
+        "comment": "Validation des enregistrements techniques"
+      }
+    },
+    "plusacmbuilditem": {
+      "name": "plusacmbuilditem",
+      "type": [
+        "array",
+        "null"
+      ],
+      "description": "Modèle/Positions fonctionnelles",
+      "items": {
+        "type": [
+          "object",
+          "null"
+        ],
+        "properties": {
+          "_action": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Action",
+            "name": "_action",
+            "metadata": {
+              "comment": "Action"
+            }
+          },
+          "_id": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "ID",
+            "name": "_id",
+            "metadata": {
+              "comment": "ID"
+            }
+          },
+          "href": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Référence interne",
+            "name": "href",
+            "metadata": {
+              "comment": "Référence interne"
+            }
+          },
+          "localref": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Référence local interne",
+            "name": "localref",
+            "metadata": {
+              "comment": "Référence local interne"
+            }
+          },
+          "icon": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Icône",
+            "name": "icon",
+            "metadata": {
+              "comment": "Icône"
+            }
+          },
+          "name": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Position fonctionnelle",
+            "name": "name",
+            "metadata": {
+              "comment": "Position fonctionnelle"
+            }
+          },
+          "plusacmbuilditemid": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Identifiant unique de l’article de construction",
+            "name": "plusacmbuilditemid",
+            "metadata": {
+              "comment": "Identifiant unique de l’article de construction"
+            }
+          },
+          "plusacmcategory": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Catégorie",
+            "name": "plusacmcategory",
+            "metadata": {
+              "comment": "Catégorie"
+            }
+          },
+          "plusacmxcat": {
+            "name": "plusacmxcat",
+            "type": [
+              "array",
+              "null"
+            ],
+            "description": "Modèle/Articles gérés par la configuration",
+            "items": {
+              "type": [
+                "object",
+                "null"
+              ],
+              "properties": {
+                "_action": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "description": "Action",
+                  "name": "_action",
+                  "metadata": {
+                    "comment": "Action"
+                  }
+                },
+                "_id": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "description": "ID",
+                  "name": "_id",
+                  "metadata": {
+                    "comment": "ID"
+                  }
+                },
+                "href": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "description": "Référence interne",
+                  "name": "href",
+                  "metadata": {
+                    "comment": "Référence interne"
+                  }
+                },
+                "localref": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "description": "Référence local interne",
+                  "name": "localref",
+                  "metadata": {
+                    "comment": "Référence local interne"
+                  }
+                },
+                "catid": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "description": "Article géré par la configuration",
+                  "name": "catid",
+                  "metadata": {
+                    "comment": "Article géré par la configuration"
+                  }
+                },
+                "isdefault": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "description": "Valeur par défaut",
+                  "name": "isdefault",
+                  "metadata": {
+                    "comment": "Valeur par défaut"
+                  }
+                },
+                "plusacmxcatid": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "description": "Identifiant unique pièce par article de construction",
+                  "name": "plusacmxcatid",
+                  "metadata": {
+                    "comment": "Identifiant unique pièce par article de construction"
+                  }
+                },
+                "rulepositive": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "description": "Indique si la règle de configuration est active ou non",
+                  "name": "rulepositive",
+                  "metadata": {
+                    "comment": "Indique si la règle de configuration est active ou non"
+                  }
+                },
+                "plusacacat": {
+                  "name": "plusacacat",
+                  "description": "Modèle/Articles gérés par la configuration",
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "properties": {
+                    "_action": {
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "description": "Action",
+                      "name": "_action",
+                      "metadata": {
+                        "comment": "Action"
+                      }
+                    },
+                    "_id": {
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "description": "ID",
+                      "name": "_id",
+                      "metadata": {
+                        "comment": "ID"
+                      }
+                    },
+                    "href": {
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "description": "Référence interne",
+                      "name": "href",
+                      "metadata": {
+                        "comment": "Référence interne"
+                      }
+                    },
+                    "localref": {
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "description": "Référence local interne",
+                      "name": "localref",
+                      "metadata": {
+                        "comment": "Référence local interne"
+                      }
+                    },
+                    "description": {
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "description": "Description de l’article géré par la configuration",
+                      "name": "description",
+                      "metadata": {
+                        "comment": "Description de l’article géré par la configuration"
+                      }
+                    },
+                    "item": {
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "description": "Identificateur d’un article géré par la configuration",
+                      "name": "item",
+                      "metadata": {
+                        "comment": "Identificateur d’un article géré par la configuration"
+                      }
+                    },
+                    "itemnum": {
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "description": "Code de l’article logistique",
+                      "name": "itemnum",
+                      "metadata": {
+                        "comment": "Code de l’article logistique"
+                      }
+                    },
+                    "itemsetid": {
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "description": "Ensemble d’article auquel appartient un article géré par la configuration",
+                      "name": "itemsetid",
+                      "metadata": {
+                        "comment": "Ensemble d’article auquel appartient un article géré par la configuration"
+                      }
+                    },
+                    "part": {
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "description": "Identificateur de l’article géré par la configuration",
+                      "name": "part",
+                      "metadata": {
+                        "comment": "Identificateur de l’article géré par la configuration"
+                      }
+                    },
+                    "plusacmcategory": {
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "description": "Catégorie de l’article géré par la configuration",
+                      "name": "plusacmcategory",
+                      "metadata": {
+                        "comment": "Catégorie de l’article géré par la configuration"
+                      }
+                    },
+                    "rev": {
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "description": "Révision de l’article géré par la configuration",
+                      "name": "rev",
+                      "metadata": {
+                        "comment": "Révision de l’article géré par la configuration"
+                      }
+                    },
+                    "plusacaxmasterpm": {
+                      "name": "plusacaxmasterpm",
+                      "type": [
+                        "array",
+                        "null"
+                      ],
+                      "description": "Règles de hiérarchie et de position de construction/Structure hiérarchique/Articles gérés par la configuration/Plan de maintenance/Fiche MP de référence",
+                      "items": {
+                        "type": [
+                          "object",
+                          "null"
+                        ],
+                        "properties": {
+                          "_action": {
+                            "type": [
+                              "string",
+                              "null"
+                            ],
+                            "description": "Action",
+                            "name": "_action",
+                            "metadata": {
+                              "comment": "Action"
+                            }
+                          },
+                          "_id": {
+                            "type": [
+                              "string",
+                              "null"
+                            ],
+                            "description": "ID",
+                            "name": "_id",
+                            "metadata": {
+                              "comment": "ID"
+                            }
+                          },
+                          "href": {
+                            "type": [
+                              "string",
+                              "null"
+                            ],
+                            "description": "Référence interne",
+                            "name": "href",
+                            "metadata": {
+                              "comment": "Référence interne"
+                            }
+                          },
+                          "localref": {
+                            "type": [
+                              "string",
+                              "null"
+                            ],
+                            "description": "Référence local interne",
+                            "name": "localref",
+                            "metadata": {
+                              "comment": "Référence local interne"
+                            }
+                          },
+                          "item": {
+                            "type": [
+                              "string",
+                              "null"
+                            ],
+                            "description": "Article géré par la configuration",
+                            "name": "item",
+                            "metadata": {
+                              "comment": "Article géré par la configuration"
+                            }
+                          },
+                          "masterpmnum": {
+                            "type": [
+                              "string",
+                              "null"
+                            ],
+                            "description": "Fiche MP de référence associée à un article géré par la configuration",
+                            "name": "masterpmnum",
+                            "metadata": {
+                              "comment": "Fiche MP de référence associée à un article géré par la configuration"
+                            }
+                          }
+                        }
+                      },
+                      "metadata": {
+                        "comment": "Règles de hiérarchie et de position de construction/Structure hiérarchique/Articles gérés par la configuration/Plan de maintenance/Fiche MP de référence"
+                      }
+                    }
+                  },
+                  "metadata": {
+                    "comment": "Modèle/Articles gérés par la configuration"
+                  }
+                }
+              }
+            },
+            "metadata": {
+              "comment": "Modèle/Articles gérés par la configuration"
+            }
+          }
+        }
+      },
+      "metadata": {
+        "comment": "Modèle/Positions fonctionnelles"
+      }
+    },
+    "plusacmlabel": {
+      "name": "plusacmlabel",
+      "type": [
+        "array",
+        "null"
+      ],
+      "description": "Modèle/Etiquettes",
+      "items": {
+        "type": [
+          "object",
+          "null"
+        ],
+        "properties": {
+          "_action": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Action",
+            "name": "_action",
+            "metadata": {
+              "comment": "Action"
+            }
+          },
+          "_id": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "ID",
+            "name": "_id",
+            "metadata": {
+              "comment": "ID"
+            }
+          },
+          "href": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Référence interne",
+            "name": "href",
+            "metadata": {
+              "comment": "Référence interne"
+            }
+          },
+          "localref": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Référence local interne",
+            "name": "localref",
+            "metadata": {
+              "comment": "Référence local interne"
+            }
+          },
+          "label": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Etiquette",
+            "name": "label",
+            "metadata": {
+              "comment": "Etiquette"
+            }
+          },
+          "labelsystem": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Système d’étiquettes",
+            "name": "labelsystem",
+            "metadata": {
+              "comment": "Système d’étiquettes"
+            }
+          },
+          "defaultforpos": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Valeur par défaut de la loc.",
+            "name": "defaultforpos",
+            "metadata": {
+              "comment": "Valeur par défaut de la loc."
+            }
+          },
+          "plusacmlabelid": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Identifiant unique du libellé associé à un article de construction",
+            "name": "plusacmlabelid",
+            "metadata": {
+              "comment": "Identifiant unique du libellé associé à un article de construction"
+            }
+          }
+        }
+      },
+      "metadata": {
+        "comment": "Modèle/Etiquettes"
+      }
+    },
+    "plusacmconfig": {
+      "name": "plusacmconfig",
+      "type": [
+        "array",
+        "null"
+      ],
+      "description": "Configurations/Nœud de configuration",
+      "items": {
+        "type": [
+          "object",
+          "null"
+        ],
+        "properties": {
+          "_action": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Action",
+            "name": "_action",
+            "metadata": {
+              "comment": "Action"
+            }
+          },
+          "_id": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "ID",
+            "name": "_id",
+            "metadata": {
+              "comment": "ID"
+            }
+          },
+          "href": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Référence interne",
+            "name": "href",
+            "metadata": {
+              "comment": "Référence interne"
+            }
+          },
+          "localref": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Référence local interne",
+            "name": "localref",
+            "metadata": {
+              "comment": "Référence local interne"
+            }
+          },
+          "abstract": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Sans gén. Actis",
+            "name": "abstract",
+            "metadata": {
+              "comment": "Sans gén. Actis"
+            }
+          },
+          "base": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Base",
+            "name": "base",
+            "metadata": {
+              "comment": "Base"
+            }
+          },
+          "comments": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Commentaires",
+            "name": "comments",
+            "metadata": {
+              "comment": "Commentaires"
+            }
+          },
+          "description": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Description",
+            "name": "description",
+            "metadata": {
+              "comment": "Description"
+            }
+          },
+          "mgn_ligne": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Ligne",
+            "name": "mgn_ligne",
+            "metadata": {
+              "comment": "Ligne"
+            }
+          },
+          "plusacmconfigid": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Identifiant unique de définition de la configuration système ou des articles finis",
+            "name": "plusacmconfigid",
+            "metadata": {
+              "comment": "Identifiant unique de définition de la configuration système ou des articles finis"
+            }
+          },
+          "status": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Statut",
+            "name": "status",
+            "metadata": {
+              "comment": "Statut"
+            }
+          },
+          "type": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Type",
+            "name": "type",
+            "metadata": {
+              "comment": "Type"
+            }
+          },
+          "variation": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Configuration",
+            "name": "variation",
+            "metadata": {
+              "comment": "Configuration"
+            }
+          }
+        }
+      },
+      "metadata": {
+        "comment": "Configurations/Nœud de configuration"
+      }
+    },
+    "plusacmrevision": {
+      "name": "plusacmrevision",
+      "type": [
+        "array",
+        "null"
+      ],
+      "description": "Configurations/Révisions du modèle",
+      "items": {
+        "type": [
+          "object",
+          "null"
+        ],
+        "properties": {
+          "_action": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Action",
+            "name": "_action",
+            "metadata": {
+              "comment": "Action"
+            }
+          },
+          "_id": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "ID",
+            "name": "_id",
+            "metadata": {
+              "comment": "ID"
+            }
+          },
+          "href": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Référence interne",
+            "name": "href",
+            "metadata": {
+              "comment": "Référence interne"
+            }
+          },
+          "localref": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Référence local interne",
+            "name": "localref",
+            "metadata": {
+              "comment": "Référence local interne"
+            }
+          },
+          "activedate": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Date d’entrée en vigueur",
+            "name": "activedate",
+            "metadata": {
+              "comment": "Date d’entrée en vigueur"
+            }
+          },
+          "description": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Description",
+            "name": "description",
+            "metadata": {
+              "comment": "Description"
+            }
+          },
+          "inactivedate": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Dante d’expiration",
+            "name": "inactivedate",
+            "metadata": {
+              "comment": "Dante d’expiration"
+            }
+          },
+          "plusacmrevisionid": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Identifiant unique de définition de la révision de la configuration système ou des articles finis",
+            "name": "plusacmrevisionid",
+            "metadata": {
+              "comment": "Identifiant unique de définition de la révision de la configuration système ou des articles finis"
+            }
+          },
+          "revision": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Révision",
+            "name": "revision",
+            "metadata": {
+              "comment": "Révision"
+            }
+          },
+          "revisiondate": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Date de révision",
+            "name": "revisiondate",
+            "metadata": {
+              "comment": "Date de révision"
+            }
+          },
+          "status": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Statut",
+            "name": "status",
+            "metadata": {
+              "comment": "Statut"
+            }
+          }
+        }
+      },
+      "metadata": {
+        "comment": "Configurations/Révisions du modèle"
+      }
+    },
+    "plusacmbuild": {
+      "name": "plusacmbuild",
+      "type": [
+        "array",
+        "null"
+      ],
+      "description": "Règles de hiérarchie et de position de construction/Structure hiérarchique/Détails position",
+      "items": {
+        "type": [
+          "object",
+          "null"
+        ],
+        "properties": {
+          "_action": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Action",
+            "name": "_action",
+            "metadata": {
+              "comment": "Action"
+            }
+          },
+          "_id": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "ID",
+            "name": "_id",
+            "metadata": {
+              "comment": "ID"
+            }
+          },
+          "href": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Référence interne",
+            "name": "href",
+            "metadata": {
+              "comment": "Référence interne"
+            }
+          },
+          "localref": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Référence local interne",
+            "name": "localref",
+            "metadata": {
+              "comment": "Référence local interne"
+            }
+          },
+          "createwo": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Créer intervention",
+            "name": "createwo",
+            "metadata": {
+              "comment": "Créer intervention"
+            }
+          },
+          "dfltqty": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Qté par défaut",
+            "name": "dfltqty",
+            "metadata": {
+              "comment": "Qté par défaut"
+            }
+          },
+          "higherlcn": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "LCN supérieur",
+            "name": "higherlcn",
+            "metadata": {
+              "comment": "LCN supérieur"
+            }
+          },
+          "indenture": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Niveau",
+            "name": "indenture",
+            "metadata": {
+              "comment": "Niveau"
+            }
+          },
+          "indicator": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Type de position",
+            "name": "indicator",
+            "metadata": {
+              "comment": "Type de position"
+            }
+          },
+          "label": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Etiquette",
+            "name": "label",
+            "metadata": {
+              "comment": "Etiquette"
+            }
+          },
+          "lcn": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "LCN",
+            "name": "lcn",
+            "metadata": {
+              "comment": "LCN"
+            }
+          },
+          "lcnsuffix": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Suffixe LCN",
+            "name": "lcnsuffix",
+            "metadata": {
+              "comment": "Suffixe LCN"
+            }
+          },
+          "mandatory": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Indique si la position est obligatoire pour la configuration sélectionnée",
+            "name": "mandatory",
+            "metadata": {
+              "comment": "Indique si la position est obligatoire pour la configuration sélectionnée"
+            }
+          },
+          "maxqty": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Qté maxi",
+            "name": "maxqty",
+            "metadata": {
+              "comment": "Qté maxi"
+            }
+          },
+          "minqty": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Qté mini",
+            "name": "minqty",
+            "metadata": {
+              "comment": "Qté mini"
+            }
+          },
+          "plusacmbuildid": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Identifiant unique de la position de construction",
+            "name": "plusacmbuildid",
+            "metadata": {
+              "comment": "Identifiant unique de la position de construction"
+            }
+          },
+          "position": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Localisation",
+            "name": "position",
+            "metadata": {
+              "comment": "Localisation"
+            }
+          },
+          "serializedqty": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Non suivi",
+            "name": "serializedqty",
+            "metadata": {
+              "comment": "Non suivi"
+            }
+          },
+          "plusacmapple": {
+            "name": "plusacmapple",
+            "type": [
+              "array",
+              "null"
+            ],
+            "description": "Règles de hiérarchie et de position de construction/Structure hiérarchique/Détails position/Configuration",
+            "items": {
+              "type": [
+                "object",
+                "null"
+              ],
+              "properties": {
+                "_action": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "description": "Action",
+                  "name": "_action",
+                  "metadata": {
+                    "comment": "Action"
+                  }
+                },
+                "_id": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "description": "ID",
+                  "name": "_id",
+                  "metadata": {
+                    "comment": "ID"
+                  }
+                },
+                "href": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "description": "Référence interne",
+                  "name": "href",
+                  "metadata": {
+                    "comment": "Référence interne"
+                  }
+                },
+                "localref": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "description": "Référence local interne",
+                  "name": "localref",
+                  "metadata": {
+                    "comment": "Référence local interne"
+                  }
+                },
+                "appletype": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "description": "Type",
+                  "name": "appletype",
+                  "metadata": {
+                    "comment": "Type"
+                  }
+                },
+                "configrule": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "description": "Configuration sélection",
+                  "name": "configrule",
+                  "metadata": {
+                    "comment": "Configuration sélection"
+                  }
+                },
+                "isprimary": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "description": "Principal",
+                  "name": "isprimary",
+                  "metadata": {
+                    "comment": "Principal"
+                  }
+                },
+                "item": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "description": "Article géré par la configuration",
+                  "name": "item",
+                  "metadata": {
+                    "comment": "Article géré par la configuration"
+                  }
+                },
+                "plusacmappleid": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "description": "Identifiant unique d’une règle de configuration",
+                  "name": "plusacmappleid",
+                  "metadata": {
+                    "comment": "Identifiant unique d’une règle de configuration"
+                  }
+                },
+                "revision": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "description": "Révision",
+                  "name": "revision",
+                  "metadata": {
+                    "comment": "Révision"
+                  }
+                },
+                "rulepositive": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "description": "Positif",
+                  "name": "rulepositive",
+                  "metadata": {
+                    "comment": "Positif"
+                  }
+                }
+              }
+            },
+            "metadata": {
+              "comment": "Règles de hiérarchie et de position de construction/Structure hiérarchique/Détails position/Configuration"
+            }
+          },
+          "plusavhigherpart": {
+            "name": "plusavhigherpart",
+            "type": [
+              "array",
+              "null"
+            ],
+            "description": "Règles de hiérarchie et de position de construction/Structure hiérarchique/Articles gérés par la configuration/Articles gérés par la configuration supérieurs",
+            "items": {
+              "type": [
+                "object",
+                "null"
+              ],
+              "properties": {
+                "_action": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "description": "Action",
+                  "name": "_action",
+                  "metadata": {
+                    "comment": "Action"
+                  }
+                },
+                "_id": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "description": "ID",
+                  "name": "_id",
+                  "metadata": {
+                    "comment": "ID"
+                  }
+                },
+                "href": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "description": "Référence interne",
+                  "name": "href",
+                  "metadata": {
+                    "comment": "Référence interne"
+                  }
+                },
+                "localref": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "description": "Référence local interne",
+                  "name": "localref",
+                  "metadata": {
+                    "comment": "Référence local interne"
+                  }
+                },
+                "plusacacatid": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "description": "Identifiant unique de l’article",
+                  "name": "plusacacatid",
+                  "metadata": {
+                    "comment": "Identifiant unique de l’article"
+                  }
+                },
+                "plusacmbuildid": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "description": "Identifiant unique de la pièce de niveau supérieur",
+                  "name": "plusacmbuildid",
+                  "metadata": {
+                    "comment": "Identifiant unique de la pièce de niveau supérieur"
+                  }
+                },
+                "rulepositive": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "description": "Sélection ?",
+                  "name": "rulepositive",
+                  "metadata": {
+                    "comment": "Sélection ?"
+                  }
+                }
+              }
+            },
+            "metadata": {
+              "comment": "Règles de hiérarchie et de position de construction/Structure hiérarchique/Articles gérés par la configuration/Articles gérés par la configuration supérieurs"
+            }
+          },
+          "plusacmmeasurepoint": {
+            "name": "plusacmmeasurepoint",
+            "type": [
+              "array",
+              "null"
+            ],
+            "description": "Règles de hiérarchie et de position de construction/Structure hiérarchique/Maintenance conditionnelle/Point de mesure pour dans la position",
+            "items": {
+              "type": [
+                "object",
+                "null"
+              ],
+              "properties": {
+                "_action": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "description": "Action",
+                  "name": "_action",
+                  "metadata": {
+                    "comment": "Action"
+                  }
+                },
+                "_id": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "description": "ID",
+                  "name": "_id",
+                  "metadata": {
+                    "comment": "ID"
+                  }
+                },
+                "href": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "description": "Référence interne",
+                  "name": "href",
+                  "metadata": {
+                    "comment": "Référence interne"
+                  }
+                },
+                "localref": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "description": "Référence local interne",
+                  "name": "localref",
+                  "metadata": {
+                    "comment": "Référence local interne"
+                  }
+                },
+                "buildid": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "description": "Identifiant externe objet PLUSACMBUILD",
+                  "name": "buildid",
+                  "metadata": {
+                    "comment": "Identifiant externe objet PLUSACMBUILD"
+                  }
+                },
+                "description": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "description": "Description du point de mesure",
+                  "name": "description",
+                  "metadata": {
+                    "comment": "Description du point de mesure"
+                  }
+                },
+                "lljpnum": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "description": "Gamme d’opérations de seuil",
+                  "name": "lljpnum",
+                  "metadata": {
+                    "comment": "Gamme d’opérations de seuil"
+                  }
+                },
+                "llmasterpmnum": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "description": "Fiche MP de référence de seuil",
+                  "name": "llmasterpmnum",
+                  "metadata": {
+                    "comment": "Fiche MP de référence de seuil"
+                  }
+                },
+                "llpriority": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "description": "Priorité seuil",
+                  "name": "llpriority",
+                  "metadata": {
+                    "comment": "Priorité seuil"
+                  }
+                },
+                "loweraction": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "description": "Seuil d’action",
+                  "name": "loweraction",
+                  "metadata": {
+                    "comment": "Seuil d’action"
+                  }
+                },
+                "lowerwarning": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "description": "Seuil de prévention",
+                  "name": "lowerwarning",
+                  "metadata": {
+                    "comment": "Seuil de prévention"
+                  }
+                },
+                "metername": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "description": "Compteur",
+                  "name": "metername",
+                  "metadata": {
+                    "comment": "Compteur"
+                  }
+                },
+                "targetorgid": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "description": "Identificateur de l’organisation",
+                  "name": "targetorgid",
+                  "metadata": {
+                    "comment": "Identificateur de l’organisation"
+                  }
+                },
+                "targetsiteid": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "description": "Identificateur du site",
+                  "name": "targetsiteid",
+                  "metadata": {
+                    "comment": "Identificateur du site"
+                  }
+                },
+                "uljpnum": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "description": "Gamme d’opérations de plafond",
+                  "name": "uljpnum",
+                  "metadata": {
+                    "comment": "Gamme d’opérations de plafond"
+                  }
+                },
+                "ulmasterpmnum": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "description": "Fiche MP de référence de plafond",
+                  "name": "ulmasterpmnum",
+                  "metadata": {
+                    "comment": "Fiche MP de référence de plafond"
+                  }
+                },
+                "ulpriority": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "description": "Priorité plafond",
+                  "name": "ulpriority",
+                  "metadata": {
+                    "comment": "Priorité plafond"
+                  }
+                },
+                "upperaction": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "description": "Plafond d’action",
+                  "name": "upperaction",
+                  "metadata": {
+                    "comment": "Plafond d’action"
+                  }
+                },
+                "upperwarning": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "description": "Plafond de prévention",
+                  "name": "upperwarning",
+                  "metadata": {
+                    "comment": "Plafond de prévention"
+                  }
+                },
+                "plusacmcharpointaction": {
+                  "name": "plusacmcharpointaction",
+                  "type": [
+                    "array",
+                    "null"
+                  ],
+                  "description": "Règles de hiérarchie et de position de construction/Structure hiérarchique/Maintenance conditionnelle/Valeurs caractéristiques de l’action",
+                  "items": {
+                    "type": [
+                      "object",
+                      "null"
+                    ],
+                    "properties": {
+                      "_action": {
+                        "type": [
+                          "string",
+                          "null"
+                        ],
+                        "description": "Action",
+                        "name": "_action",
+                        "metadata": {
+                          "comment": "Action"
+                        }
+                      },
+                      "_id": {
+                        "type": [
+                          "string",
+                          "null"
+                        ],
+                        "description": "ID",
+                        "name": "_id",
+                        "metadata": {
+                          "comment": "ID"
+                        }
+                      },
+                      "href": {
+                        "type": [
+                          "string",
+                          "null"
+                        ],
+                        "description": "Référence interne",
+                        "name": "href",
+                        "metadata": {
+                          "comment": "Référence interne"
+                        }
+                      },
+                      "localref": {
+                        "type": [
+                          "string",
+                          "null"
+                        ],
+                        "description": "Référence local interne",
+                        "name": "localref",
+                        "metadata": {
+                          "comment": "Référence local interne"
+                        }
+                      },
+                      "jpnum": {
+                        "type": [
+                          "string",
+                          "null"
+                        ],
+                        "description": "Gamme d’opération",
+                        "name": "jpnum",
+                        "metadata": {
+                          "comment": "Gamme d’opération"
+                        }
+                      },
+                      "masterpmnum": {
+                        "type": [
+                          "string",
+                          "null"
+                        ],
+                        "description": "Fiche de MP de référence",
+                        "name": "masterpmnum",
+                        "metadata": {
+                          "comment": "Fiche de MP de référence"
+                        }
+                      },
+                      "plusacmmeasurepointid": {
+                        "type": [
+                          "string",
+                          "null"
+                        ],
+                        "description": "Identifiant externe objet PLUSACMMEASUREPOINT",
+                        "name": "plusacmmeasurepointid",
+                        "metadata": {
+                          "comment": "Identifiant externe objet PLUSACMMEASUREPOINT"
+                        }
+                      },
+                      "priority": {
+                        "type": [
+                          "string",
+                          "null"
+                        ],
+                        "description": "Priorité",
+                        "name": "priority",
+                        "metadata": {
+                          "comment": "Priorité"
+                        }
+                      },
+                      "value": {
+                        "type": [
+                          "string",
+                          "null"
+                        ],
+                        "description": "Valeur ",
+                        "name": "value",
+                        "metadata": {
+                          "comment": "Valeur "
+                        }
+                      }
+                    }
+                  },
+                  "metadata": {
+                    "comment": "Règles de hiérarchie et de position de construction/Structure hiérarchique/Maintenance conditionnelle/Valeurs caractéristiques de l’action"
+                  }
+                }
+              }
+            },
+            "metadata": {
+              "comment": "Règles de hiérarchie et de position de construction/Structure hiérarchique/Maintenance conditionnelle/Point de mesure pour dans la position"
+            }
+          }
+        }
+      },
+      "metadata": {
+        "comment": "Règles de hiérarchie et de position de construction/Structure hiérarchique/Détails position"
+      }
+    },
+    "plusacmformula": {
+      "name": "plusacmformula",
+      "type": [
+        "array",
+        "null"
+      ],
+      "description": "Règles de hiérarchie et de position de construction/Structure hiérarchique/Formules/Formules",
+      "items": {
+        "type": [
+          "object",
+          "null"
+        ],
+        "properties": {
+          "_action": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Action",
+            "name": "_action",
+            "metadata": {
+              "comment": "Action"
+            }
+          },
+          "_id": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "ID",
+            "name": "_id",
+            "metadata": {
+              "comment": "ID"
+            }
+          },
+          "href": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Référence interne",
+            "name": "href",
+            "metadata": {
+              "comment": "Référence interne"
+            }
+          },
+          "localref": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Référence local interne",
+            "name": "localref",
+            "metadata": {
+              "comment": "Référence local interne"
+            }
+          },
+          "formula": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Formule",
+            "name": "formula",
+            "metadata": {
+              "comment": "Formule"
+            }
+          },
+          "name": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Nom de la formule",
+            "name": "name",
+            "metadata": {
+              "comment": "Nom de la formule"
+            }
+          },
+          "plusacmformulaid": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Identifiant unique de la formule dynamique",
+            "name": "plusacmformulaid",
+            "metadata": {
+              "comment": "Identifiant unique de la formule dynamique"
+            }
+          }
+        }
+      },
+      "metadata": {
+        "comment": "Règles de hiérarchie et de position de construction/Structure hiérarchique/Formules/Formules"
+      }
+    },
+    "plusacmmodelsystem": {
+      "name": "plusacmmodelsystem",
+      "type": [
+        "array",
+        "null"
+      ],
+      "description": "Règles de hiérarchie et de position de construction/Structure hiérarchique/Perspectives associées",
+      "items": {
+        "type": [
+          "object",
+          "null"
+        ],
+        "properties": {
+          "_action": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Action",
+            "name": "_action",
+            "metadata": {
+              "comment": "Action"
+            }
+          },
+          "_id": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "ID",
+            "name": "_id",
+            "metadata": {
+              "comment": "ID"
+            }
+          },
+          "href": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Référence interne",
+            "name": "href",
+            "metadata": {
+              "comment": "Référence interne"
+            }
+          },
+          "localref": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Référence local interne",
+            "name": "localref",
+            "metadata": {
+              "comment": "Référence local interne"
+            }
+          },
+          "description": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Description de la perspective",
+            "name": "description",
+            "metadata": {
+              "comment": "Description de la perspective"
+            }
+          },
+          "itemsetid": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Ensemble d’article",
+            "name": "itemsetid",
+            "metadata": {
+              "comment": "Ensemble d’article"
+            }
+          },
+          "system": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Perspective",
+            "name": "system",
+            "metadata": {
+              "comment": "Perspective"
+            }
+          }
+        }
+      },
+      "metadata": {
+        "comment": "Règles de hiérarchie et de position de construction/Structure hiérarchique/Perspectives associées"
+      }
+    }
+  }
+}
