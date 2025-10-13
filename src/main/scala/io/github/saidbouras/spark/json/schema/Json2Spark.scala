@@ -163,7 +163,8 @@ class Json2Spark(rawJson: String,
       case Some(x) =>
         StructType(
           x.map(fieldName =>
-              property2Struct(json.hcursor.downField("properties").downField(fieldName),
+              property2Struct(
+                json.hcursor.downField("properties").downField(fieldName),
                 fieldName,
                 Json2Spark.cursorPath(json.hcursor.downField("properties").downField(fieldName)),
                 Json2Spark.requiredFields(json.hcursor))

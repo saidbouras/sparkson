@@ -42,7 +42,7 @@ jobs:
           passphrase: ${{ secrets.GPG_PASSPHRASE }}
 
       - name: Build and test
-        run: mvn -B clean test
+        run: mvn -B clean install
 
       - name: Deploy release to Maven Central
         env:
