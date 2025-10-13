@@ -1,5 +1,11 @@
 # 🌟 Sparkson
 
+![Build](https://github.com/saidbouras/sparkson/actions/workflows/build.yml/badge.svg)
+![Release](https://github.com/saidbouras/sparkson/actions/workflows/release.yml/badge.svg)
+![Maven Central](https://img.shields.io/maven-central/v/io.github.saidbouras/sparkson.svg)
+![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)
+![Scala](https://img.shields.io/badge/scala-2.12.19-lightgrey.svg)
+
 > **Forked from** [Databricks Industry Solutions json2spark-schema](https://github.com/databricks-industry-solutions/json2spark-schema)  
 > Maintained and extended by **Saïd Bouras**.
 
