@@ -3,7 +3,7 @@
 
     <groupId>io.github.saidbouras</groupId>
     <artifactId>sparkson</artifactId>
-    <version>0.1.0</version>
+    <version>0.1.1-SNAPSHOT</version>
     <name>sparkson</name>
     <description>Complete JSON data support library on Spark</description>
     <url>https://github.com/saidbouras/sparkson</url>

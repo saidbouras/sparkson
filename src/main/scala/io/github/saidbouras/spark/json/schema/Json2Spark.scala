@@ -11,7 +11,7 @@ object Json2Spark {
   /*
    * Given a file path, convert the file resource to a string
    */
-  def file2String(fqPath: String): String = {
+  def readFile(fqPath: String): String = {
     val file = scala.io.Source.fromFile(fqPath)
     try file.mkString
     finally file.close()
@@ -312,7 +312,7 @@ class Json2Spark(rawJson: String,
         resourcePath match {
           case x if x.contains("#") => //Ref is "file.json#/path/to/resource"
             val (fileName, location) = (x.split("#")(0), x.split("#")(1))
-            val json = new Json2Spark(Json2Spark.file2String(externalRefBaseURI + "/" + fileName)
+            val json = new Json2Spark(Json2Spark.readFile(externalRefBaseURI + "/" + fileName)
               , enforceRequiredField
               , defaultType
               , defsLocation
@@ -322,7 +322,7 @@ class Json2Spark(rawJson: String,
              property2Struct(c, fieldName, basePath + "/file:///" + location)
           case x if x.contains("https") => ???
           case x => //This is an entire separate json file
-            new Json2Spark(Json2Spark.file2String(externalRefBaseURI + "/" + x)
+            new Json2Spark(Json2Spark.readFile(externalRefBaseURI + "/" + x)
               , enforceRequiredField
               , defaultType
               , defsLocation

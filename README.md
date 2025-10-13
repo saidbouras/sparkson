@@ -1,6 +1,5 @@
 # 🌟 Sparkson
 
-![Build](https://github.com/saidbouras/sparkson/actions/workflows/build.yml/badge.svg)
 ![Release](https://github.com/saidbouras/sparkson/actions/workflows/release.yml/badge.svg)
 ![Maven Central](https://img.shields.io/maven-central/v/io.github.saidbouras/sparkson.svg)
 ![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)
