@@ -1,4 +1,4 @@
-name: Build & Deploy Snapshot
+name: Deploy Snapshot
 
 on:
   push:
@@ -9,7 +9,7 @@ permissions:
   contents: read
 
 jobs:
-  build-snapshot:
+  snapshot:
     runs-on: ubuntu-latest
 
     steps:
@@ -33,11 +33,18 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-m2
 
-      - name: Build and test
-        run: mvn -B clean test
+      - name: Import GPG Key
+        uses: crazy-max/ghaction-import-gpg@v6
+        with:
+          gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
+          passphrase: ${{ secrets.GPG_PASSPHRASE }}
 
-      - name: Deploy SNAPSHOT to OSSRH
+      - name: Build and test
+        run: mvn -B clean verify
+
+      - name: Deploy snapshot
         env:
-          OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
-          OSSRH_PASSWORD: ${{ secrets.OSSRH_PASSWORD }}
-        run: mvn -B deploy -DskipTests=true -Dgpg.skip=true
+          MAVEN_USERNAME: ${{ secrets.MAVEN_USERNAME }}
+          MAVEN_PASSWORD: ${{ secrets.MAVEN_PASSWORD }}
+          GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
+        run: mvn -B deploy -DskipTests=true
