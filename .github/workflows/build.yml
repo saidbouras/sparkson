@@ -21,9 +21,9 @@ jobs:
         with:
           distribution: temurin
           java-version: 17
-          server-id: ossrh
-          server-username: OSSRH_USERNAME
-          server-password: OSSRH_PASSWORD
+          server-id: central
+          server-username: MAVEN_USERNAME
+          server-password: MAVEN_PASSWORD
 
       - name: Cache Maven packages
         uses: actions/cache@v4
@@ -34,10 +34,10 @@ jobs:
             ${{ runner.os }}-m2
 
       - name: Build and test
-        run: mvn -B clean verify
+        run: mvn -B clean test
 
       - name: Deploy SNAPSHOT to OSSRH
         env:
           OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
           OSSRH_PASSWORD: ${{ secrets.OSSRH_PASSWORD }}
-        run: mvn -B deploy -P release -DskipTests=true -Dgpg.skip=true
+        run: mvn -B deploy -DskipTests=true -Dgpg.skip=true

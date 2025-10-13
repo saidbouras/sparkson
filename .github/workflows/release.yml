@@ -1,4 +1,4 @@
-name: Release to Maven Central
+name: Release
 
 on:
   push:
@@ -21,9 +21,9 @@ jobs:
         with:
           distribution: temurin
           java-version: 17
-          server-id: ossrh
-          server-username: OSSRH_USERNAME
-          server-password: OSSRH_PASSWORD
+          server-id: central
+          server-username: MAVEN_USERNAME
+          server-password: MAVEN_PASSWORD
           gpg-private-key: ${{ secrets.GPG_PRIVATE_KEY }}
           gpg-passphrase: ${{ secrets.GPG_PASSPHRASE }}
 
@@ -35,12 +35,18 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-m2
 
-      - name: Build and test
-        run: mvn -B clean verify
+      - name: Import GPG Key
+        uses: crazy-max/ghaction-import-gpg@v6
+        with:
+          gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
+          passphrase: ${{ secrets.GPG_PASSPHRASE }}
 
-      - name: Deploy release to OSSRH
+      - name: Build and test
+        run: mvn -B clean test
+
+      - name: Deploy release to Maven Central
         env:
-          OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
-          OSSRH_PASSWORD: ${{ secrets.OSSRH_PASSWORD }}
+          MAVEN_USERNAME: ${{ secrets.MAVEN_USERNAME }}
+          MAVEN_PASSWORD: ${{ secrets.MAVEN_PASSWORD }}
           GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
-        run: mvn -B deploy -P release -DskipTests=true
+        run: mvn -B clean deploy -DskipTests=true
